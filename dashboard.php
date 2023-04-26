@@ -80,9 +80,6 @@
 			</form>
 			<input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
-			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
 		</nav>
 		<!-- NAVBAR -->
 
@@ -90,6 +87,7 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
+					<h1>Welcome {{username}}</h1>
 					<h1>Dashboard</h1>
 					<ul class="breadcrumb1">
 						<li>
@@ -109,7 +107,7 @@
 						<img src="img/plastic.png" alt="Plastic" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>1020</h3>
+						<h3>120</h3>
 						<p>Plastics</p>
 					</span>
 				</li>
@@ -118,7 +116,7 @@
 						<img src="img/paper.png" alt="Paper" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>2834</h3>
+						<h3>284</h3>
 						<p>Papers</p>
 					</span>
 				</li>
@@ -127,7 +125,7 @@
 						<img src="img/metal.png" alt="Metal" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>$2543</h3>
+						<h3>543</h3>
 						<p>Metals</p>
 					</span>
 				</li>
@@ -136,7 +134,7 @@
 						<img src="img/others.png" alt="Others" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>2834</h3>
+						<h3>284</h3>
 						<p>Others</p>
 					</span>
 				</li>
@@ -200,6 +198,87 @@
 						</div>
 						<div class="ml-2 text-gray-600 font-semibold">25%</div>
 					</div>
+
+				</div>
+				<div class="w-full sm:w-full md:w-full lg:w-1/3 xl:w-1/3 p-4">
+					<!-- Right Card -->
+					<div>
+						<!-- Right Card content goes here -->
+						<h1 class="head text-4xl font-extrabold mb-4">Monitoring</h1>
+
+						<!-- TRASHBIN MONITORING CONTENT -->
+
+						<!-- HTML Code -->
+						<div class="relative m-auto w-48 h-48">
+							<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gray-300"></div>
+							<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-t from-green-500 to-green-700 transform origin-bottom "></div>
+							<div class="absolute top-0 left-0 w-full h-full rounded-full flex items-center justify-center">
+								<div class="text-center">
+									<div class="text-white text-3xl font-bold">50%</div>
+									<div class="text-white text-md">Capacity</div>
+									<div class="text-white text-sm">Overall Trashbin</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- CAPACITY PER CATEGORY -->
+						<div class="flex justify-center mt-7 gap-2">
+							<!-- SMALL CIRCLE -->
+							<div class="relative m-auto w-24 h-24">
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gray-300"></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-t from-green-500 to-green-700 transform origin-bottom "></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full flex items-center justify-center">
+									<div class="text-center">
+										<div class="text-white text-xl font-bold">50%</div>
+										<div class="text-white text-sm">Plastic</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="relative m-auto w-24 h-24">
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gray-300"></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-t from-blue-500 to-blue-700 transform origin-bottom "></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full flex items-center justify-center">
+									<div class="text-center">
+										<div class="text-white text-xl font-bold">65%</div>
+										<div class="text-white text-sm">Paper</div>
+									</div>
+								</div>
+							</div>
+							<div class="relative m-auto w-24 h-24">
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gray-300"></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-t from-red-500 to-red-700 transform origin-bottom "></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full flex items-center justify-center">
+									<div class="text-center">
+										<div class="text-white text-xl font-bold">37%</div>
+										<div class="text-white text-sm">Metal</div>
+									</div>
+								</div>
+							</div>
+							<div class="relative m-auto w-24 h-24">
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gray-300"></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-t from-yellow-500 to-yellow-700 transform origin-bottom "></div>
+								<div class="absolute top-0 left-0 w-full h-full rounded-full flex items-center justify-center">
+									<div class="text-center">
+										<div class="text-white text-xl font-bold">75%</div>
+										<div class="text-white text-sm">Other</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<h3 class="text text-center mt-10 font-bold text-red-500 text-2xl">Warning</h3>
+							<p class="text-center">
+								You have to ubos the basura in the trashbin
+							</p>
+						</div>
+
+						<!-- END TRASHBIN CONTENT -->
+
+					</div>
+				</div>
 
 		</main>
 		<!-- MAIN -->
