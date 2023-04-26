@@ -9,14 +9,12 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
-	<link href="/dist/output.css" rel="stylesheet">
+	<link href="dist/output.css" rel="stylesheet">
 
 	<title>EcoCycle | Dashboard</title>
 </head>
 
 <body>
-
-
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="index.html" class="brand">
@@ -82,17 +80,6 @@
 			</form>
 			<input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
-			<div class="notification">
-				<a href="#" class="nav-link"><i class='bx bxs-bell'></i></a>
-				<span class="num">8</span>
-				<ul class="submenu"><a class="nav-ref">Notifications</a><br>
-					<li class="student"><a href="#">Notification 1</a></li>
-					<li class="point"><a href="#">Notification 2</a></li>
-					<li><a href="#">Notification 3</a></li>
-				</ul>
-			</div>
-
-
 			<a href="#" class="profile">
 				<img src="img/people.png">
 			</a>
@@ -114,10 +101,6 @@
 						</li>
 					</ul>
 				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download'></i>
-					<span class="text">Download PDF</span>
-				</a>
 			</div>
 
 			<ul class="box-info">
@@ -164,7 +147,7 @@
 				<div class="order">
 					<!-- ADD CHART HERE -->
 					<!-- Left Card content goes here -->
-					<h1 class="head text-4xl font-extrabold mb-4">Graph 1</h1>
+					<h1 class="head text-4xl font-extrabold mb-4">Graph</h1>
 
 					<!-- graph CONTENT HERE -->
 
