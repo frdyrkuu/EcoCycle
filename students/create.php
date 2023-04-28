@@ -61,12 +61,6 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
-			<li>
-				<a href="../activity/index.php">
-				<i class="bx bx-credit-card-front"></i>
-					<span class="text">Activities</span>
-				</a>
-			</li>
 			<li class="active">
 				<a href="../students/index.php">
 				<i class="bx bx-book-reader"></i>
@@ -82,7 +76,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#">
+				<a href="../activity/index.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Activity Logs</span>
 				</a>
@@ -200,8 +194,8 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 						</div>
 
 						<div class="form-group">
-							<label>Points</label>
-							<input type="number" name="pointaccumulated" id="pointaccumulated" class="form-control" placeholder="Enter Points" required value=0 disabled>
+							<label hidden>Points</label>
+							<input hidden type="number" name="pointaccumulated" id="pointaccumulated" class="form-control" placeholder="Enter Points" required value=0>
 						</div>
 
 						<div class="form-group">

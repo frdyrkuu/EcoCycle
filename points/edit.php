@@ -1,6 +1,6 @@
 <?php include_once('../config.php');
 if(isset($_REQUEST['editId']) and $_REQUEST['editId']!=""){
-	$row	=	$db->getAllRecords('pupils','*',' AND id="'.$_REQUEST['editId'].'"');
+	$row	=	$db->getAllRecords('points','*',' AND id="'.$_REQUEST['editId'].'"');
 }
 
 if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
@@ -8,19 +8,15 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 	if($username==""){
 		header('location:'.$_SERVER['PHP_SELF'].'?msg=un&editId='.$_REQUEST['editId']);
 		exit;
-	}elseif($rfidcode==""){
+	}elseif($trash_points==""){
 		header('location:'.$_SERVER['PHP_SELF'].'?msg=ue&editId='.$_REQUEST['editId']);
-		exit;
-	}elseif($pointaccumulated==""){
-		header('location:'.$_SERVER['PHP_SELF'].'?msg=up&editId='.$_REQUEST['editId']);
 		exit;
 	}
 	$data	=	array(
 					'username'=>$username,
-					'rfidcode'=>$rfidcode,
-					'pointaccumulated'=>$pointaccumulated,
+					'trash_points'=>$trash_points,
 					);
-	$update	=	$db->update('pupils',$data,array('id'=>$editId));
+	$update	=	$db->update('points',$data,array('id'=>$editId));
 	if($update){
 		header('location: index.php?msg=rus');
 		exit;
@@ -170,12 +166,8 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 							<input type="text" name="username" id="username" class="form-control" value="<?php echo $row[0]['username']; ?>" placeholder="Enter user name" required>
 						</div>
 						<div class="form-group">
-							<label>RFID Code <span class="text-danger">*</span></label>
-							<input type="text" name="rfidcode" id="rfidcode" class="form-control" value="<?php echo $row[0]['rfidcode']; ?>" placeholder="Enter user email" required>
-						</div>
-						<div class="form-group">
 							<label>Points <span class="text-danger">*</span></label>
-							<input type="number" name="pointaccumulated" id="pointaccumulated" maxlength="12" class="form-control" value="<?php echo $row[0]['pointaccumulated']; ?>" placeholder="Enter user phone" required>
+							<input type="text" name="trash_points" id="trash_points" class="form-control" value="<?php echo $row[0]['trash_points']; ?>" placeholder="Enter user email" required>
 						</div>
 						<div class="form-group">
 							<input type="hidden" name="editId" id="editId" value="<?php echo $_REQUEST['editId']?>">

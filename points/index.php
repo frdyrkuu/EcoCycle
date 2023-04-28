@@ -18,14 +18,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-	<title>EcoCycle | Points</title>
+	<title>EcoCycle</title>
 </head>
 <body>
 
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="/index.html" class="brand">
+		<a href="#" class="brand">
 			<i class='bx bxs-trash'></i>
 			<span class="text">EcoCycle</span>
 		</a>
@@ -34,12 +34,6 @@
 				<a href="../dashboard.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li>
-				<a href="../activity/index.php">
-				<i class="bx bx-credit-card-front"></i>
-					<span class="text">Activities</span>
 				</a>
 			</li>
 			<li>
@@ -57,7 +51,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#">
+				<a href="../activity/index.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Activity Logs</span>
 				</a>
@@ -129,21 +123,8 @@
 				if(isset($_REQUEST['username']) and $_REQUEST['username']!=""){
 					$condition	.=	' AND username LIKE "%'.$_REQUEST['username'].'%" ';
 				}
-				if(isset($_REQUEST['useremail']) and $_REQUEST['useremail']!=""){
-					$condition	.=	' AND useremail LIKE "%'.$_REQUEST['useremail'].'%" ';
-				}
-				if(isset($_REQUEST['userphone']) and $_REQUEST['userphone']!=""){
-					$condition	.=	' AND userphone LIKE "%'.$_REQUEST['userphone'].'%" ';
-				}
-				if(isset($_REQUEST['df']) and $_REQUEST['df']!=""){
-
-					$condition	.=	' AND DATE(dt)>="'.$_REQUEST['df'].'" ';
-
-				}
-				if(isset($_REQUEST['dt']) and $_REQUEST['dt']!=""){
-
-					$condition	.=	' AND DATE(dt)<="'.$_REQUEST['dt'].'" ';
-
+				if(isset($_REQUEST['trash_points']) and $_REQUEST['trash_points']!=""){
+					$condition	.=	' AND trash_points LIKE "%'.$_REQUEST['trash_points'].'%" ';
 				}
 				
 				$userData	=	$db->getAllRecords('points','*',$condition,'ORDER BY id DESC');
@@ -174,8 +155,6 @@
 									<th>ID</th>
 									<th class="text-center">Category</th>
 									<th class="text-center">Points (per grams)</th>
-									<th class="text-center">Total Weight</th>
-									<th class="text-center">Previous Trash Pickup Date</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
@@ -189,11 +168,9 @@
 								<tr>
 									<td><?php echo $s;?></td>
 									<td align="center"><?php echo $val['username'];?></td>
-									<td align="center"><?php echo $val['useremail'];?></td>
-									<td align="center"><?php echo $val['userphone'];?></td>
-									<td align="center"><?php echo date('Y-m-d',strtotime($val['dt']));?></td>
+									<td align="center"><?php echo $val['trash_points'];?></td>
 									<td align="center">
-										<a href="../views/edit.php?editId=<?php echo $val['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> 
+										<a href="../points/edit.php?editId=<?php echo $val['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> 
 									</td>
 
 								</tr>

@@ -18,14 +18,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-	<title>EcoCycle | Students</title>
+	<title>EcoCycle</title>
 </head>
 <body>
 
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="/index.html" class="brand">
+		<a href="#" class="brand">
 			<i class='bx bxs-trash'></i>
 			<span class="text">EcoCycle</span>
 		</a>
@@ -34,12 +34,6 @@
 				<a href="../dashboard.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li>
-				<a href="../activity/index.php">
-				<i class="bx bx-credit-card-front"></i>
-					<span class="text">Activities</span>
 				</a>
 			</li>
 			<li class="active">
@@ -57,7 +51,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#">
+				<a href="../activity/index.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Activity Logs</span>
 				</a>
@@ -197,7 +191,7 @@
 								<tr>
 									<td><?php echo $s;?></td>
 									<td><?php echo $val['username'];?></td>
-									<td><?php echo $val['rfidcode'];?></td>
+									<td align="center"><?php echo $val['rfidcode'];?></td>
 									<td align="center"><?php echo $val['pointaccumulated'];?></td>
 									<td align="center"><?php echo date('Y-m-d',strtotime($val['recorddate']));?></td>
 									<td align="center" hidden><?php echo $val['status'];?></td>
