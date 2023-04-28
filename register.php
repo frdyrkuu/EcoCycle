@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $usr = $conn->query("SELECT username FROM user_admin WHERE 1");
-    $usernameValidation = $usr->fetch_assoc()['user_admin'];
+    $usernameValidation = $usr->fetch_assoc()['username'];
 
     if ($username != $usernameValidation) {
 
