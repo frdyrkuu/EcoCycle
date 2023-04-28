@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
                     Admin Sign Up Form
                 </h3>
                 <p class="font-['Poppins'] text-gray-600 text-lg mt-3 mx-2 text-center">Create your Administrator <br>
-                    Account to have a permission to edit product details.</p>
+                    Account to have a permission to dashboard.</p>
                 <br>
                 <div class="">
                     <form action="" method="POST" id="sign-up-form">
