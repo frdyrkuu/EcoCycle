@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
         exit();
     } else {
 
-        header("Location: signup.php?error=Username has been taken");
+        header("Location: register.php?error=Username has been taken");
         exit();
     }
 }
