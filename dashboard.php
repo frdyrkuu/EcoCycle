@@ -121,7 +121,7 @@ include 'check_logout.php';
 						<img src="img/plastic.png" alt="Plastic" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>120</h3>
+						<h3 id="plastic-count">120</h3>
 						<p>Plastics</p>
 					</span>
 				</li>
@@ -130,7 +130,7 @@ include 'check_logout.php';
 						<img src="img/paper.png" alt="Paper" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>284</h3>
+						<h3 id="paper-count">584</h3>
 						<p>Papers</p>
 					</span>
 				</li>
@@ -139,7 +139,7 @@ include 'check_logout.php';
 						<img src="img/metal.png" alt="Metal" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>543</h3>
+						<h3 id="metal-count">543</h3>
 						<p>Metals</p>
 					</span>
 				</li>
@@ -148,7 +148,7 @@ include 'check_logout.php';
 						<img src="img/others.png" alt="Others" class="rounded-lg hover:animate-waving-hand">
 					</div>
 					<span class="text">
-						<h3>284</h3>
+						<h3 id="others-count">284</h3>
 						<p>Others</p>
 					</span>
 				</li>
@@ -171,10 +171,10 @@ include 'check_logout.php';
 						<div class="flex-grow ml-4">
 							<div class="text-gray-700 font-semibold">Paper</div>
 							<div class="bg-blue-200 h-2 rounded-md mt-1">
-								<div class="h-full w-3/4 bg-blue-500 rounded-md"></div>
+								<div class="paper-bar h-full w-3/4 bg-blue-500 rounded-md"></div>
 							</div>
 						</div>
-						<div class="ml-2 text-gray-600 font-semibold">75%</div>
+						<div class="ml-2 text-gray-600 font-semibold" id="paper-percentage"></div>
 					</div>
 					<div class="flex items-center mt-3">
 						<div class="flex-shrink-0">
@@ -183,10 +183,10 @@ include 'check_logout.php';
 						<div class="flex-grow ml-4">
 							<div class="text-gray-700 font-semibold">Plastic</div>
 							<div class="bg-green-200 h-2 rounded-md mt-1">
-								<div class="h-full w-2/3 bg-green-500 rounded-md"></div>
+								<div class="plastic-bar h-full w-2/3 bg-green-500 rounded-md"></div>
 							</div>
 						</div>
-						<div class="ml-2 text-gray-600 font-semibold">65%</div>
+						<div class="ml-2 text-gray-600 font-semibold" id="plastic-percentage"></div>
 					</div>
 					<div class="flex items-center mt-3">
 						<div class="flex-shrink-0">
@@ -195,10 +195,10 @@ include 'check_logout.php';
 						<div class="flex-grow ml-4">
 							<div class="text-gray-700 font-semibold">Metal</div>
 							<div class="bg-red-200 h-2 rounded-md mt-1">
-								<div class="h-full w-1/2 bg-red-500 rounded-md"></div>
+								<div class="metal-bar h-full w-1/2 bg-red-500 rounded-md"></div>
 							</div>
 						</div>
-						<div class="ml-2 text-gray-600 font-semibold">50%</div>
+						<div class="ml-2 text-gray-600 font-semibold" id="metal-percentage"></div>
 					</div>
 					<div class="flex items-center mt-3">
 						<div class="flex-shrink-0">
@@ -207,10 +207,10 @@ include 'check_logout.php';
 						<div class="flex-grow ml-4">
 							<div class="text-gray-700 font-semibold">Others</div>
 							<div class="bg-yellow-200 h-2 rounded-md mt-1">
-								<div class="h-full w-1/4 bg-yellow-500 rounded-md"></div>
+								<div class="others-bar h-full w-1/4 bg-yellow-500 rounded-md"></div>
 							</div>
 						</div>
-						<div class="ml-2 text-gray-600 font-semibold">25%</div>
+						<div class="ml-2 text-gray-600 font-semibold" id="others-percentage"></div>
 					</div>
 				</div>
 				<!-- END TRASHBIN CONTENT -->
@@ -230,6 +230,7 @@ include 'check_logout.php';
 		});
 	</script>
 	<script src="script.js"></script>
+	<script src="src/chart.js"></script>
 </body>
 
 </html>

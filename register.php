@@ -4,7 +4,7 @@ include('connection.php');
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $name = $_POST['name'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
 
     $usr = $conn->query("SELECT username FROM user_admin WHERE 1");
     $usernameValidation = $usr->fetch_assoc()['username'];

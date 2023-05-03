@@ -1,8 +1,38 @@
 <?php
 include 'check_auth.php';
+require_once 'connection.php';
+
+// Check if the user has submitted the login form
+if (isset($_POST['submit'])) {
+    // Get the submitted username and password
+    $submitted_username = $_POST['username'];
+    $submitted_password = $_POST['password'];
+
+    // Prepare and execute a SQL statement to retrieve the user's information
+    $stmt = $conn->prepare("SELECT * FROM user_admin WHERE username = ?");
+    $stmt->bind_param("s", $submitted_username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Verify the username and password
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        if ($submitted_password == $row['password']) {
+            // Authentication successful, store username in session
+            $_SESSION['admin-name'] = $row['name'];
+            // Redirect to the protected page
+            header("Location: dashboard.php");
+            exit;
+        }
+    }
+
+    // Authentication failed, show error message
+    $error_message = "Invalid username or password.";
+}
 ?>
 <!doctype html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,8 +95,12 @@ include 'check_auth.php';
                         <div class="font-bold text-xl mb-5 text-center text-green-900">Administrive Login Form</div>
 
                         <div class="flex flex-col space-y-4 font-semibold">
-                            <form action="auth.php" method="POST" class="flex flex-col space-y-4 font-semibold">
+                            <form action="" method="POST" class="flex flex-col space-y-4 font-semibold">
                                 <div>
+                                    <?php if (isset($error_message)) { ?>
+                                        <p class="text-red-500 font-bold text-sm"><?php echo $error_message; ?></p>
+                                        <br>
+                                    <?php } ?>
                                     <label for="username" class="text-gray-700 font-bold">
                                         Admin Username
                                     </label>
